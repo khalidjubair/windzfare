@@ -1,5 +1,9 @@
 
 /*---------- Background ------------*/
+.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2,
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1{
+    max-width: 100%;
+}
 .windzfare-wrapper{
 
     .bg_color_1{

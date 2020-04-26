@@ -3067,6 +3067,11 @@ img {
 }
 
 /*---------- Background ------------*/
+.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2,
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+  max-width: 100%;
+}
+
 .windzfare-wrapper {
   /*--------- urgent_cause_carousel Navs --------*/
   /*--------- urgent_cause_carousel Dots --------*/
