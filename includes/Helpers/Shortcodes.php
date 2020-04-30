@@ -315,7 +315,7 @@ class Shortcodes{
                         <div class="windzfare_progress_inner">
                             <div class="windzfare_progress_bar_back">
                                 <div class="windzfare_progress_bar" style="max-width: '. Utils::get_fund_raised_percent( $args['campaign_id'] ) .'%;">
-                                    <span class="windzfare_progress_value">'. Utils::get_fund_raised_percent( $args['campaign_id'] ) .'</span>
+                                    <span class="windzfare_progress_value">'. Utils::get_fund_raised_percent( $args['campaign_id'] ) .'%</span>
                                 </div>
                             </div>
                         </div>
