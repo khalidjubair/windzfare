@@ -19,7 +19,7 @@ class Shortcodes{
     public static function render_funding_goal( $atts = [] ){
         $args = shortcode_atts( [
             'campaign_id'         => get_the_ID(),
-            'label'      => 'Goal:',
+            'label'      => esc_html__('Goal:', 'windzfare'),
             'icon'      => '',
         ], $atts );
  
@@ -30,7 +30,7 @@ class Shortcodes{
     public static function render_fund_raised( $atts = [] ){
         $args = shortcode_atts( [
             'campaign_id'         => get_the_ID(),
-            'label'      => 'Fund Raised:',
+            'label'      => esc_html__('Fund Raised:', 'windzfare'),
             'icon'      => '',
         ], $atts );
 
@@ -44,7 +44,7 @@ class Shortcodes{
     public static function render_donation_level( $atts = [] ){
         $args = shortcode_atts( [
             'campaign_id'          => null,
-            'button_label'         => __( 'Donate Now', 'windzfare' ),
+            'button_label'         => esc_html__( 'Donate Now', 'windzfare' ),
         ], $atts );
 
         return Partials::output_donation_level( $args['campaign_id'] );
@@ -309,8 +309,8 @@ class Shortcodes{
             'campaign_id'         => get_the_ID(),
             'style'               => '1',
         ], $atts );
-
-        return '<div class="windzfare-wrapper">
+        ob_start();
+        $html = '<div class="windzfare-wrapper">
                     <div class="windzfare_progress_content windzfare_progress_bar_'.$args['style'].'">
                         <div class="windzfare_progress_inner">
                             <div class="windzfare_progress_bar_back">
@@ -321,6 +321,9 @@ class Shortcodes{
                         </div>
                     </div>
                 </div>';
+
+        $html = ob_get_clean();
+        return $html;
     }
 
     public static function render_progress_circle( $atts = null ){
@@ -328,8 +331,8 @@ class Shortcodes{
             'campaign_id'         => get_the_ID(),
             'postfix'         => '',
         ], $atts );
-
-        return '<div class="windzfare-wrapper">
+        ob_start();
+        $html =  '<div class="windzfare-wrapper">
                     <div class="windzfare_progress_content windzfare_progress_bar_circle">
                         <div class="windzfare_progress_inner">
                             <div class="windzfare_progress_bar_back">
@@ -344,6 +347,8 @@ class Shortcodes{
                         </div>
                     </div>
                 </div>';
+        $html = ob_get_clean();
+        return $html;
     }
 
 } 

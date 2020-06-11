@@ -38,8 +38,8 @@ class Init {
 		);
 		$cpt_tax->init(
 			'windzfare_event_cat', 
-			'Event Category', 
-			'Event Categories', 
+			esc_html__('Event Category', 'windzfare'), 
+			esc_html__('Event Categories', 'windzfare'), 
 			'windzfare_event',
 			'manage_categories'
 		);

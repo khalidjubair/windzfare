@@ -1,8 +1,6 @@
 <?php
 
 namespace Windzfare\Admin\Product;
-use Windzfare\Helpers\Utils as Utils;
-
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -54,8 +52,8 @@ if (!class_exists('Init')) {
             $product_type_options['windzfare'] = [
                 'id'            => '_windzfare',
                 'wrapper_class' => 'show_if_simple',
-                'label'         => __( 'Windzfare', 'woocommerce' ),
-                'description'   => __( '', 'woocommerce' ),
+                'label'         => esc_html__( 'Windzfare', 'woocommerce' ),
+                'description'   => esc_html__( '', 'woocommerce' ),
                 'default'       => 'no'
             ];
         
@@ -212,7 +210,7 @@ if (!class_exists('Init')) {
             //Get country select
             $countries_obj      = new \WC_Countries();
             $countries          = $countries_obj->__get('countries');
-            array_unshift( $countries, 'Select a country' );
+            array_unshift( $countries, esc_html__('Select a country', 'windzfare') );
 
             //Country list
             woocommerce_wp_select(

@@ -18,7 +18,7 @@ class Partials{
         $donation_level_fields = get_post_meta( $campaign_id, 'repeatable_donation_level_fields', true );
         
         ob_start(); ?>
-
+ 
             <div class="give_donation">
                 <form enctype="multipart/form-data" method="post" class="cart">
                     <div class="donation_amount_tab">
@@ -189,20 +189,20 @@ class Partials{
         $grid = 12 / $cols;
         
         ?>
-        <div class="windzfare_causes_colored col-lg-<?php echo $grid; ?> col-md-6">
+        <div class="windzfare_causes_colored col-lg-<?php echo esc_attr($grid); ?> col-md-6">
             <div class="windzfare_causes">
                 <div class="windzfare_causes_wrapper">
                     <div class="windzfare_causes_image">
-                        <img class="primary_img" src="<?php echo $image_link; ?>" alt="">
+                        <img class="primary_img" src="<?php echo esc_url($image_link); ?>" alt="">
                         <?php $categories = get_the_terms( $args['campaign_id'], 'product_cat' ); ?>
-                        <div class="windzfare_highlight_tag"><?php echo $categories[0]->name; ?></div>
+                        <div class="windzfare_highlight_tag"><?php echo esc_html($categories[0]->name); ?></div>
                     </div>
                     <div class="windzfare_causes_content">
                         <h4><?php the_title(); ?></h4>
                         <p><?php the_excerpt(); ?></p>
                         <div class="windzfare_progress_content">
                             <div class="windzfare_progress_bar_back">
-                                <div class="windzfare_progress_bar" style="max-width: <?php echo $fund_raised_percent; ?>;"><span class="windzfare_progress_value"><?php echo $fund_raised_percent; ?></span></div>
+                                <div class="windzfare_progress_bar" style="max-width: <?php echo esc_attr($fund_raised_percent); ?>;"><span class="windzfare_progress_value"><?php echo esc_attr($fund_raised_percent); ?></span></div>
                             </div>
                             <div class="windzfare_progress_amount">
                                 <span><i class="ion-md-wifi"></i> <b><?php esc_html_e( 'Goal:','windzfare' ); ?></b> <?php echo wc_price( $funding_goal ); ?></span> 
@@ -244,16 +244,16 @@ class Partials{
             <div class="windzfare_causes">
                 <div class="windzfare_causes_wrapper">
                     <div class="windzfare_causes_image">
-                        <img class="primary_img" src="<?php echo $image_link; ?>" alt="">
+                        <img class="primary_img" src="<?php echo esc_url($image_link); ?>" alt="">
                         <?php $categories = get_the_terms( $campaign_id, 'product_cat' ); ?>
-                        <div class="windzfare_highlight_tag"><?php echo $categories[0]->name; ?></div>
+                        <div class="windzfare_highlight_tag"><?php echo esc_html($categories[0]->name); ?></div>
                     </div>
                     <div class="windzfare_causes_content">
                         <h4><?php the_title(); ?></h4>
                         <p><?php the_excerpt(); ?></p>
                         <div class="windzfare_progress_content">
                             <div class="windzfare_progress_bar_back">
-                                <div class="windzfare_progress_bar" style="max-width: <?php echo $fund_raised_percent; ?>;"><span class="windzfare_progress_value"><?php echo $fund_raised_percent; ?></span></div>
+                                <div class="windzfare_progress_bar" style="max-width: <?php echo esc_attr($fund_raised_percent); ?>;"><span class="windzfare_progress_value"><?php echo esc_html($fund_raised_percent); ?></span></div>
                             </div>
                             <div class="windzfare_progress_amount"><span><i class="ion-md-wifi"></i> <b><?php esc_html_e( 'Goal:','windzfare' ); ?></b> <?php echo wc_price( $funding_goal ); ?></span> <span><i class="ion-logo-usd"></i> <b><?php esc_html_e('Raised:', 'windzfare'); ?></b> <?php echo wc_price( $raised ); ?></span></div>
                         </div>

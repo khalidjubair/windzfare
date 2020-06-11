@@ -2,8 +2,8 @@
 	/*
 	Plugin Name: Windzfare
 	Plugin URI: https://wordpress.org/plugins/windzfare
-	Description: Windzfare is woocommerce based donation and fundraising plugin.
-	Version: 1.0.1
+	Description: Windzfare is woocommerce based fundraising plugin.
+	Version: 1.0.0
 	Author: WindzWP
 	Author URI: https://windzwp.com/
 	License: GPLv3 or later
